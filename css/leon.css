@@ -4,6 +4,7 @@
 }
 
 :root {
+  scroll-behavior: smooth;
   --main-color: #10cab7;
   --secondary-color: #2c4755;
   --bac-color: #f6f6f6;
@@ -165,6 +166,35 @@ header a {
 }
 /*end landing section*/
 
+/*start fancy title*/
+.fancy-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.fancy-title h1 {
+  color: var(--title-color);
+  font-size: 110px;
+  letter-spacing: -3px;
+  margin: 0 0 -30px 0;
+}
+
+.fancy-title p {
+  color: var(--grey-color);
+  font-size: 20px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .fancy-title h1 {
+    font-size: 70px;
+    margin: 0 0 -20px 0;
+  }
+}
+/*end fancy title*/
+
 /*start features section*/
 .features {
   background-color: var(--bac-color);
@@ -213,33 +243,6 @@ header a {
 .services .container {
   margin: auto;
   padding: 80px 0;
-}
-
-.services .title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-.services .title h1 {
-  color: var(--title-color);
-  font-size: 110px;
-  letter-spacing: -3px;
-  margin: 0 0 -30px 0;
-}
-
-.services .title p {
-  color: var(--grey-color);
-  font-size: 20px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .services .title h1 {
-    font-size: 70px;
-    margin: 0 0 -20px 0;
-  }
 }
 
 .services .content {
@@ -326,33 +329,6 @@ header a {
   padding: 80px 0;
 }
 
-.portfolio .title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-.portfolio .title h1 {
-  color: var(--title-color);
-  font-size: 110px;
-  letter-spacing: -3px;
-  margin: 0 0 -30px 0;
-}
-
-.portfolio .title p {
-  color: var(--grey-color);
-  font-size: 20px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .portfolio .title h1 {
-    font-size: 70px;
-    margin: 0 0 -20px 0;
-  }
-}
-
 .portfolio .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -397,31 +373,6 @@ header a {
 .about .container {
   margin: auto;
   padding: 80px 0;
-}
-
-.about .title {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.about .title h1 {
-  color: var(--title-color);
-  font-size: 110px;
-  letter-spacing: -3px;
-  margin: 0 0 -30px 0;
-}
-
-.about .title p {
-  color: var(--grey-color);
-  font-size: 20px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .about .title h1 {
-    font-size: 70px;
-    margin: 0 0 -20px 0;
-  }
 }
 
 .about .content {
@@ -536,31 +487,6 @@ header a {
   padding: 80px 0;
 }
 
-.contact .title {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.contact .title h1 {
-  color: var(--title-color);
-  font-size: 110px;
-  letter-spacing: -3px;
-  margin: 0 0 -30px 0;
-}
-
-.contact .title p {
-  color: var(--grey-color);
-  font-size: 20px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .contact .title h1 {
-    font-size: 70px;
-    margin: 0 0 -20px 0;
-  }
-}
-
 .contact .content p:first-child {
   color: var(--secondary-color);
   font-weight: 800;
@@ -594,3 +520,26 @@ header a {
   color: var(--secondary-color);
 }
 /*end contact section*/
+
+/*start footer*/
+footer {
+  background-color: var(--secondary-color);
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  margin: 0;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+footer span {
+  color: var(--main-color);
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+/*end footer*/
