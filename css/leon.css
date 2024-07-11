@@ -4,7 +4,29 @@
 }
 
 :root {
-  --mainColor: #10cab7;
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --bac-color: #f6f6f6;
+  --grey-color: #666;
+  --title-color: #ebeced;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 /*start header*/
@@ -43,7 +65,7 @@ header .links {
 .icon span:not(:nth-child(2)) {
   width: 100%;
   height: 2px;
-  background-color: #666;
+  background-color: var(--grey-color);
 }
 
 .icon span:nth-child(2) {
@@ -63,7 +85,7 @@ header ul {
   right: 0;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: var(--bac-color);
   list-style: none;
   width: 220px;
   display: none;
@@ -73,8 +95,8 @@ header ul::before {
   content: "";
   width: 0;
   height: 0;
-  border: 10px solid #f6f6f6;
-  border-color: transparent transparent #f6f6f6 transparent;
+  border: 10px solid var(--bac-color);
+  border-color: transparent transparent var(--bac-color) transparent;
   position: absolute;
   top: -20px;
   right: 5px;
@@ -123,7 +145,7 @@ header a {
 
 .landing h1 {
   width: fit-content;
-  color: var(--mainColor);
+  color: var(--main-color);
   font-size: 55px;
   margin: 0;
 }
@@ -138,7 +160,7 @@ header a {
 
 /*start features section*/
 .features {
-  background-color: #f6f6f6;
+  background-color: var(--bac-color);
   display: flex;
   justify-content: center;
 }
@@ -159,7 +181,7 @@ header a {
 }
 
 .features i {
-  color: var(--mainColor);
+  color: var(--main-color);
   font-size: 48px;
 }
 
@@ -170,26 +192,120 @@ header a {
 }
 
 .features .grey {
-  color: #666;
+  color: var(--grey-color);
   font-size: 18px;
   line-height: 30px;
 }
 /*end features section*/
 
-@media (max-width: 992px) {
-  .container {
-    width: 750px;
+/*start services section*/
+.services {
+  display: flex;
+}
+
+.services .container {
+  margin: auto;
+  padding: 80px 0;
+}
+
+.services .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.services .title h1 {
+  color: var(--title-color);
+  font-size: 110px;
+  letter-spacing: -3px;
+  margin: 0 0 -30px 0;
+}
+
+.services .title p {
+  color: var(--grey-color);
+  font-size: 20px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .services .title h1 {
+    font-size: 70px;
+    margin: 0 0 -17px 0;
+  }
+  .services .title p {
+    font-size: 12px;
   }
 }
 
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
+.services .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.services .service {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .services .content {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+  .services .service {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
+.services .service i {
+  color: var(--main-color);
+  font-size: 36px;
+  margin: 15px 30px 0 0;
+}
+
+@media (max-width: 768px) {
+  .services .service i {
+    margin: 15px 0 0 0;
   }
 }
+
+.services .service .bold {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.services .service .grey {
+  color: var(--grey-color);
+  font-size: 17px;
+  max-width: 500px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.services .col .image {
+  text-align: center;
+  position: relative;
+}
+
+.services .col img {
+  width: 250px;
+}
+
+.services .col .image::before {
+  content: "";
+  width: 120px;
+  height: calc(100% + 100px);
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+@media (max-width: 1200px) {
+  .services .col .image {
+    display: none;
+  }
+}
+/*end services section*/
